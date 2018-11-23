@@ -1,13 +1,15 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-int	init_module(void)
+static int __init init(void)
 {
-  printk(KERN_INFO "Hello world !\n");
-  return (0);
+	printk(KERN_INFO "Hello world !\n");
+	return (0);
 }
+module_init(init)
 
-void	cleanup_module(void)
+static void __exit cleanup(void)
 {
-  printk(KERN_INFO "Cleaning up module.\n");
+	printk(KERN_INFO "Cleaning up module.\n");
 }
+module_exit(cleanup)
