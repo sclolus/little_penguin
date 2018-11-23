@@ -1,0 +1,20 @@
+from: Sebastien Clolus <sclolus@student.42.fr>
+
+This is the patch of the makefile for the assignment 02 of the little_penguin project.
+The EXTRAVERSION field has been modified so that the version string of the kernel contains '-thor_kernel'
+
+Signed-off-by: Sebastien Clolus <sclolus@student.42.fr>
+---
+diff -up kernel-4.19/Makefile.orig kernel-4.19/Makefile
+
+--- kernel-4.19/Makefile.orig	2018-11-23 19:49:55.426822617 +0000
++++ kernel-4.19/Makefile	2018-11-23 19:48:37.525827047 +0000
+@@ -2,7 +2,7 @@
+ VERSION = 4
+ PATCHLEVEL = 19
+ SUBLEVEL = 0
+-EXTRAVERSION =
++EXTRAVERSION =-thor_kernel
+ NAME = "People's Front"
+ 
+ # *DOCUMENTATION*
