@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-2.0
 #include <linux/module.h>
 #include <linux/kernel.h>
 /* #include <linux/delay.h> */
@@ -5,6 +6,8 @@
 #include <linux/device.h>
 #include <linux/usb.h>
 #include <linux/mod_devicetable.h>
+
+MODULE_LICENSE("GPL v2");
 
 # define USB_DEVICE_ID_MATCH_CLASS (USB_DEVICE_ID_MATCH_DEV_CLASS |	\
 					USB_DEVICE_ID_MATCH_DEV_SUBCLASS)

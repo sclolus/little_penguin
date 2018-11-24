@@ -1,0 +1,4 @@
+ACTION=="remove", SUBSYSTEM=="input", PROGRAM="echo this is a test"
+ACTION=="add",SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", PROGRAM="insmod /lib/modules/4.18.5/kernel/usb_kbd_detect.ko"
+
+ACTION=="remove",SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="usb", PROGRAM="rmmod usb_kbd_detect"
