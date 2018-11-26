@@ -1,9 +1,19 @@
 src-m += usb_kbd_detect.c
 obj-m += $(src-m:.c=.o)
-all:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+module-obj = $(obj-m:.o=.ko)
+KERNELRELEASE=$(shell uname -r)
+KDIR=/lib/modules/$(shell uname -r)/build
 
-modules_install:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) modules
+all:
+	make -C $(KDIR) M=$(PWD) modules
+
+modules_install: all
+	make -C $(KDIR) M=$(PWD) modules_install
+	cp $(module-obj) /lib/modules/$(shell uname -r)/extra
+	sudo depmod -a
+
 clean:
-	make -C /lib/modules/$(shell uname -r)/build M=$(PWD) clean
+	make -C $(KDIR) M=$(PWD) clean
+
+test:
+	udevadm control --reload-rules

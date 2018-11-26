@@ -7,6 +7,7 @@
 #include <linux/usb.h>
 #include <linux/mod_devicetable.h>
 
+MODULE_ALIAS("usb_kbd");
 MODULE_LICENSE("GPL v2");
 
 # define USB_DEVICE_ID_MATCH_CLASS (USB_DEVICE_ID_MATCH_DEV_CLASS |	\
