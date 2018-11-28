@@ -9,7 +9,6 @@
 #include <linux/syscalls.h>
 #include <linux/jiffies.h>
 #include <linux/mutex.h>
-#include <asm-generic/page.h>
 
 MODULE_ALIAS("fortytwo_debugfs");
 MODULE_LICENSE("GPL v2");
@@ -36,8 +35,7 @@ static ssize_t id_write(struct file *file, const char __user *from, size_t size,
 	printk(KERN_INFO "user wrote: \"%s\" to buffer", buffer);
 	if (ret == sizeof(LOGIN) - 1 && memcmp(buffer, from, ret) == 0) {
 		return (ret);
-	}
-	else {
+	} else {
 		return (-EINVAL);
 	}
 }
@@ -52,10 +50,23 @@ static ssize_t jiffies_read(struct file *file, char __user *to, size_t size, lof
 }
 
 static struct mutex foo_mutex;
+/* Ok so I've got no idea how to fetch the current PAGE_SIZE of the system in a portable way */
 static char	    foo_buffer[PAGE_SIZE];
 
-static ssize_t	foo_write(struct file *file, char __user *from, size_t size, loff_t *_offset)
+static ssize_t	foo_read(struct file *file, char __user *to, size_t size, loff_t *_offset)
 {
+	uint64_t    ret;
+
+	mutex_lock(&foo_mutex);
+	ret = simple_read_from_buffer(to, size, _offset, foo_buffer, sizeof(foo_buffer));
+	mutex_unlock(&foo_mutex);
+	return (ret);
+}
+
+static ssize_t	foo_write(struct file *file, const char __user *from, size_t size, loff_t *_offset)
+{
+	uint64_t    ret;
+
 	mutex_lock(&foo_mutex);
 	ret = simple_write_to_buffer(foo_buffer, sizeof(foo_buffer), _offset, from, size);
 	mutex_unlock(&foo_mutex);
@@ -71,23 +82,19 @@ static struct file_operations jiffies_fops = {
 	.read = &jiffies_read,
 };
 
-/* static struct miscdevice fortytwo_dev = { */
-/* 	.minor = MISC_DYNAMIC_MINOR, */
-/* 	.name = DEVICE_NAME, */
-/* 	.fops = &fops, */
-/* 	.mode = 0666, */
-/* }; */
-
+static struct file_operations foo_fops = {
+	.read = &foo_read,
+	.write = &foo_write,
+};
 
 static struct dentry *fortytwo_dir = NULL;
 static struct dentry *id_file = NULL;
 static struct dentry *jiffies_file = NULL;
 static struct dentry *foo_file = NULL;
 
-
 static int __init init(void)
 {
-	mutex_init(foo_mutex);
+	mutex_init(&foo_mutex);
 	fortytwo_dir = debugfs_create_dir("fortytwo", NULL);
 	printk(KERN_INFO LOG "Creating fortytwo debugfs hierarchy");
 	if (fortytwo_dir == NULL) {
@@ -104,7 +111,7 @@ static int __init init(void)
 		printk(KERN_WARNING LOG "Failed to create jiffies file");
 		goto err_cleanup;
 	}
-	foo_file = debugfs_create_file("foo", 0644, fortytwo_dir, NULL, &id_fops); // change the fops
+	foo_file = debugfs_create_file("foo", 0644, fortytwo_dir, NULL, &foo_fops); // change the fops
 	if (foo_file == NULL) {
 		printk(KERN_WARNING LOG "Failed to create foo file");
 		goto err_cleanup;
@@ -116,7 +123,7 @@ err_cleanup:
 }
 module_init(init)
 
-static void __exit cleanup(void)
+	static void __exit cleanup(void)
 {
 	printk(KERN_INFO LOG "Cleaning up module.\n");
 	debugfs_remove_recursive(fortytwo_dir);
