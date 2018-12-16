@@ -1,24 +1,18 @@
 // SPDX-License-Identifier: GPL-2.0
 #include <linux/module.h>
 #include <linux/kernel.h>
-/* #include <linux/delay.h> */
-/* #include <linux/kobject.h> */
 #include <linux/device.h>
 #include <linux/usb.h>
-#include <linux/mod_devicetable.h>
+#include <linux/hid.h>
 
 MODULE_ALIAS("usb_kbd");
 MODULE_LICENSE("GPL v2");
 
-# define USB_DEVICE_ID_MATCH_CLASS (USB_DEVICE_ID_MATCH_DEV_CLASS |	\
-					USB_DEVICE_ID_MATCH_DEV_SUBCLASS)
-# define USB_DEVICE_CLASS(cl, sc) \
-	.match_flags = USB_DEVICE_ID_MATCH_CLASS,	\
-		.bDeviceClass = (cl),			\
-		.bDeviceSubClass = (sc),
-
 static const struct usb_device_id usb_module_id_table[2] = {
-	{ USB_DEVICE_CLASS(0x09, 0x00) },
+	{ USB_INTERFACE_INFO(
+			USB_INTERFACE_CLASS_HID,
+			USB_INTERFACE_SUBCLASS_BOOT,
+			USB_INTERFACE_PROTOCOL_KEYBOARD) },
 	{}
 };
 MODULE_DEVICE_TABLE(usb, usb_module_id_table);
