@@ -22,25 +22,26 @@ static const struct file_operations myfd_fops = {
 	.write = &myfd_write
 };
 
-static const struct miscdevice myfd_device = {
-	.minor = MISC_DYNAMIC_MINOR.name = "reverse",
+static struct miscdevice myfd_device = {
+	.minor = MISC_DYNAMIC_MINOR,
+	.name = "reverse",
 	.fops = &myfd_fops
 };
 
-static char str[PAGE_SIZE];
+static char str[PAGE_SIZE + 1];
 
 static int __init myfd_init(void)
 {
 	int retval;
 
 	retval = misc_register(&myfd_device);
-	return ret;
+	return retval;
 }
 module_init(myfd_init);
 
 static void __exit myfd_cleanup(void)
 {
-
+	misc_deregister(&myfd_device);
 }
 module_exit(myfd_cleanup);
 
@@ -52,17 +53,28 @@ ssize_t myfd_read(struct file *fp,
 	size_t	t;
 	size_t	i;
 	char	*tmp;
+	ssize_t	ret;
+	size_t	str_len;
 
 /***************
  * Malloc like a boss
  ***************/
-	tmp = kmalloc(sizeof(char) * PAGE_SIZE * 2, GFP_KERNEL);
+	tmp = kmalloc(sizeof(str), GFP_KERNEL);
 	if (tmp == NULL)
 		return -ENOMEM;
-	for (t = strlen(str) - 1, i = 0; t >= 0; t--, i++)
+
+	str_len = strlen(str);
+	if (str_len == 0)
+		return 0;
+	for (t = strlen(str) - 1, i = 0;; t--, i++) {
 		tmp[i] = str[t];
+		if (t == 0)
+			break;
+	}
 	tmp[i] = 0x0;
-	return simple_read_from_buffer(user, size, offs, tmp, i);
+	ret = simple_read_from_buffer(user, size, offs, tmp, str_len);
+	kfree(tmp);
+	return ret;
 }
 
 ssize_t myfd_write(struct file *fp,
@@ -72,7 +84,9 @@ ssize_t myfd_write(struct file *fp,
 {
 	ssize_t res;
 
-	res = simple_write_to_buffer(str, size, offs, user, size) + 1;
-	str[size + 1] = '\0';
+	res = simple_write_to_buffer(str, sizeof(str) - 1, offs, user, size);
+	if (res < 0)
+		return -EIO;
+	str[res] = '\0';
 	return res;
 }

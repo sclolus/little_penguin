@@ -1,4 +1,4 @@
-src-m += fortytwo_dir.c
+src-m += main.c
 obj-m += $(src-m:.c=.o)
 module-obj = $(obj-m:.o=.ko)
 KERNELRELEASE=$(shell uname -r)
@@ -15,6 +15,3 @@ modules_install: all
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean
-
-test:
-	udevadm control --reload-rules
