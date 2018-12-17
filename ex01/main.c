@@ -1,15 +1,18 @@
+// SPDX-License-Identifier: GPL-2.0
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-static int __init init(void)
+int init_module(void)
 {
 	printk(KERN_INFO "Hello world !\n");
 	return (0);
 }
-module_init(init)
+/* module_init(init) */
 
-static void __exit cleanup(void)
+void cleanup_module(void)
 {
 	printk(KERN_INFO "Cleaning up module.\n");
 }
-module_exit(cleanup)
+/* module_exit(cleanup) */
+MODULE_LICENSE("GPL v2");
+MODULE_AUTHOR("sclolus");
