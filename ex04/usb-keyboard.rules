@@ -1,4 +1,3 @@
-ACTION=="remove", SUBSYSTEM=="input", PROGRAM="echo this is a test"
 ACTION=="add",SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", RUN="/sbin/modprobe usb_kbd"
 
 ACTION=="remove",SUBSYSTEM=="input", ENV{ID_INPUT_KEYBOARD}=="1", RUN="/sbin/modprobe --remove usb_kbd"
