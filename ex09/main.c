@@ -21,6 +21,7 @@
 #include <../fs/mount.h>
 #include <linux/fs_struct.h>
 
+MODULE_AUTHOR("sclolus");
 MODULE_ALIAS("metryingnottokilleverything");
 MODULE_LICENSE("GPL v2");
 
@@ -58,7 +59,6 @@ static int		(*dl_iterate_mounts)(int (*)(struct vfsmount *, void *),
 
 static int		ct_show_mount(struct vfsmount *mount, void *data)
 {
-	/* struct path	    *root_path = ((struct seq_file*)data)->private; */
 	struct super_block  *sb;
 	struct path	    dev_path = { .mnt = mount,
 					 .dentry = mount->mnt_root };
