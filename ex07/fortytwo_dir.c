@@ -19,67 +19,58 @@ MODULE_LICENSE("GPL v2");
 
 static ssize_t id_read(struct file *file, char __user *to, size_t size, loff_t *_offset)
 {
-	uint64_t ret;
+	int64_t ret;
 
 	ret = simple_read_from_buffer(to, size, _offset, LOGIN, sizeof(LOGIN) - 1);
+	if (ret < 0)
+		return (-EIO);
 	return (ret);
 }
 
 static ssize_t id_write(struct file *file, const char __user *from, size_t size, loff_t *_offset)
 {
 	static char buffer[sizeof(LOGIN)];
-	uint64_t ret = 0;
+	uint64_t    ret;
 
-	ret = simple_write_to_buffer(buffer, sizeof(LOGIN) - 1, _offset, from, size);
-	buffer[ret] = 0;
-	printk(KERN_INFO "user wrote: \"%s\" to buffer", buffer);
-	if (ret == sizeof(LOGIN) - 1 && memcmp(buffer, from, ret) == 0) {
-		return (ret);
-	} else {
+	if (size != sizeof(LOGIN) - 1)
 		return (-EINVAL);
-	}
-}
-
-static ssize_t jiffies_read(struct file *file, char __user *to, size_t size, loff_t *_offset)
-{
-	uint64_t jiffies = get_jiffies_64();
-	uint64_t ret;
-
-	ret = simple_read_from_buffer(to, size, (loff_t[]){0}, &jiffies, sizeof(jiffies));
-	return (ret);
+	ret = copy_from_user(buffer, from, sizeof(LOGIN) - 1);
+	if (ret == 0 && memcmp(buffer, LOGIN, sizeof(LOGIN) - 1) == 0)
+		return (sizeof(LOGIN) - 1);
+	else
+		return (-EINVAL);
 }
 
 static struct mutex foo_mutex;
-/* Ok so I've got no idea how to fetch the current PAGE_SIZE of the system in a portable way */
 static char	    foo_buffer[PAGE_SIZE];
 
 static ssize_t	foo_read(struct file *file, char __user *to, size_t size, loff_t *_offset)
 {
-	uint64_t    ret;
+	int64_t    ret;
 
 	mutex_lock(&foo_mutex);
 	ret = simple_read_from_buffer(to, size, _offset, foo_buffer, sizeof(foo_buffer));
 	mutex_unlock(&foo_mutex);
+	if (ret < 0)
+		return (-EIO);
 	return (ret);
 }
 
 static ssize_t	foo_write(struct file *file, const char __user *from, size_t size, loff_t *_offset)
 {
-	uint64_t    ret;
+	int64_t    ret;
 
 	mutex_lock(&foo_mutex);
 	ret = simple_write_to_buffer(foo_buffer, sizeof(foo_buffer), _offset, from, size);
 	mutex_unlock(&foo_mutex);
+	if (ret < 0)
+		return (-EIO);
 	return (ret);
 }
 
 static struct file_operations id_fops = {
 	.read = &id_read,
 	.write = &id_write,
-};
-
-static struct file_operations jiffies_fops = {
-	.read = &jiffies_read,
 };
 
 static struct file_operations foo_fops = {
@@ -99,14 +90,14 @@ static int __init init(void)
 	printk(KERN_INFO LOG "Creating fortytwo debugfs hierarchy");
 	if (fortytwo_dir == NULL) {
 		printk(KERN_WARNING LOG "Failed to create fortytwo subdirectory");
-		return (-1);
+		return (-EPERM);
 	}
 	id_file = debugfs_create_file("id", 0666, fortytwo_dir, NULL, &id_fops);
 	if (id_file == NULL) {
 		printk(KERN_WARNING LOG "Failed to create id file");
 		goto err_cleanup;
 	}
-	jiffies_file = debugfs_create_file("jiffies", 0444, fortytwo_dir, NULL, &jiffies_fops); // change the fops
+	jiffies_file = debugfs_create_u64("jiffies", 0444, fortytwo_dir, (u64 *)&jiffies); // change the fops
 	if (jiffies_file == NULL) {
 		printk(KERN_WARNING LOG "Failed to create jiffies file");
 		goto err_cleanup;
@@ -119,7 +110,7 @@ static int __init init(void)
 	return (0);
 err_cleanup:
 	debugfs_remove_recursive(fortytwo_dir);
-	return (-1);
+	return (-EPERM);
 }
 module_init(init)
 
