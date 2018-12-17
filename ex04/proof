@@ -1,0 +1,537 @@
+[Mon Dec 17 21:45:44 2018] Linux version 4.18.5-sclolus (root@sclolus) (gcc version 8.2.0 (GCC)) #2 SMP Tue Nov 13 18:19:38 GMT 2018
+[Mon Dec 17 21:45:44 2018] Command line: BOOT_IMAGE=/vmlinuz-4.18.5-sclolus root=/dev/sda3 ro net.ifnames=0
+[Mon Dec 17 21:45:44 2018] x86/fpu: Supporting XSAVE feature 0x001: 'x87 floating point registers'
+[Mon Dec 17 21:45:44 2018] x86/fpu: Supporting XSAVE feature 0x002: 'SSE registers'
+[Mon Dec 17 21:45:44 2018] x86/fpu: Supporting XSAVE feature 0x004: 'AVX registers'
+[Mon Dec 17 21:45:44 2018] x86/fpu: xstate_offset[2]:  576, xstate_sizes[2]:  256
+[Mon Dec 17 21:45:44 2018] x86/fpu: Enabled xstate features 0x7, context size is 832 bytes, using 'standard' format.
+[Mon Dec 17 21:45:44 2018] BIOS-provided physical RAM map:
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x0000000000000000-0x000000000009fbff] usable
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x000000000009fc00-0x000000000009ffff] reserved
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x00000000000f0000-0x00000000000fffff] reserved
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x0000000000100000-0x00000000dbfeffff] usable
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x00000000dbff0000-0x00000000dbffffff] ACPI data
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x00000000fec00000-0x00000000fec00fff] reserved
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x00000000fee00000-0x00000000fee00fff] reserved
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x00000000fffc0000-0x00000000ffffffff] reserved
+[Mon Dec 17 21:45:44 2018] BIOS-e820: [mem 0x0000000100000000-0x000000013c1fffff] usable
+[Mon Dec 17 21:45:44 2018] NX (Execute Disable) protection: active
+[Mon Dec 17 21:45:44 2018] SMBIOS 2.5 present.
+[Mon Dec 17 21:45:44 2018] DMI: innotek GmbH VirtualBox/VirtualBox, BIOS VirtualBox 12/01/2006
+[Mon Dec 17 21:45:44 2018] e820: update [mem 0x00000000-0x00000fff] usable ==> reserved
+[Mon Dec 17 21:45:44 2018] e820: remove [mem 0x000a0000-0x000fffff] usable
+[Mon Dec 17 21:45:44 2018] last_pfn = 0x13c200 max_arch_pfn = 0x400000000
+[Mon Dec 17 21:45:44 2018] MTRR default type: uncachable
+[Mon Dec 17 21:45:44 2018] MTRR variable ranges disabled:
+[Mon Dec 17 21:45:44 2018] Disabled
+[Mon Dec 17 21:45:44 2018] x86/PAT: MTRRs disabled, skipping PAT initialization too.
+[Mon Dec 17 21:45:44 2018] CPU MTRRs all blank - virtualized system.
+[Mon Dec 17 21:45:44 2018] x86/PAT: Configuration [0-7]: WB  WT  UC- UC  WB  WT  UC- UC  
+[Mon Dec 17 21:45:44 2018] last_pfn = 0xdbff0 max_arch_pfn = 0x400000000
+[Mon Dec 17 21:45:44 2018] found SMP MP-table at [mem 0x0009fff0-0x0009ffff] mapped at [(____ptrval____)]
+[Mon Dec 17 21:45:44 2018] Scanning 1 areas for low memory corruption
+[Mon Dec 17 21:45:44 2018] Base memory trampoline at [(____ptrval____)] 99000 size 24576
+[Mon Dec 17 21:45:44 2018] BRK [0x4ef3a000, 0x4ef3afff] PGTABLE
+[Mon Dec 17 21:45:44 2018] BRK [0x4ef3b000, 0x4ef3bfff] PGTABLE
+[Mon Dec 17 21:45:44 2018] BRK [0x4ef3c000, 0x4ef3cfff] PGTABLE
+[Mon Dec 17 21:45:44 2018] BRK [0x4ef3d000, 0x4ef3dfff] PGTABLE
+[Mon Dec 17 21:45:44 2018] BRK [0x4ef3e000, 0x4ef3efff] PGTABLE
+[Mon Dec 17 21:45:44 2018] ACPI: Early table checksum verification disabled
+[Mon Dec 17 21:45:44 2018] ACPI: RSDP 0x00000000000E0000 000024 (v02 VBOX  )
+[Mon Dec 17 21:45:44 2018] ACPI: XSDT 0x00000000DBFF0040 00004C (v01 VBOX   VBOXXSDT 00000001 ASL  00000061)
+[Mon Dec 17 21:45:44 2018] ACPI: FACP 0x00000000DBFF0110 0000F4 (v04 VBOX   VBOXFACP 00000001 ASL  00000061)
+[Mon Dec 17 21:45:44 2018] ACPI: DSDT 0x00000000DBFF0540 0021FF (v02 VBOX   VBOXBIOS 00000002 INTL 20100528)
+[Mon Dec 17 21:45:44 2018] ACPI: FACS 0x00000000DBFF0240 000040
+[Mon Dec 17 21:45:44 2018] ACPI: FACS 0x00000000DBFF0240 000040
+[Mon Dec 17 21:45:44 2018] ACPI: APIC 0x00000000DBFF0280 00006C (v02 VBOX   VBOXAPIC 00000001 ASL  00000061)
+[Mon Dec 17 21:45:44 2018] ACPI: HPET 0x00000000DBFF02F0 000038 (v01 VBOX   VBOXHPET 00000001 ASL  00000061)
+[Mon Dec 17 21:45:44 2018] ACPI: MCFG 0x00000000DBFF0330 00003C (v01 VBOX   VBOXMCFG 00000001 ASL  00000061)
+[Mon Dec 17 21:45:44 2018] ACPI: SSDT 0x00000000DBFF0370 0001CC (v01 VBOX   VBOXCPUT 00000002 INTL 20100528)
+[Mon Dec 17 21:45:44 2018] ACPI: Local APIC address 0xfee00000
+[Mon Dec 17 21:45:44 2018] No NUMA configuration found
+[Mon Dec 17 21:45:44 2018] Faking a node at [mem 0x0000000000000000-0x000000013c1fffff]
+[Mon Dec 17 21:45:44 2018] NODE_DATA(0) allocated [mem 0x13c1f8000-0x13c1fbfff]
+[Mon Dec 17 21:45:44 2018] tsc: Fast TSC calibration using PIT
+[Mon Dec 17 21:45:44 2018] Zone ranges:
+[Mon Dec 17 21:45:44 2018]   DMA      [mem 0x0000000000001000-0x0000000000ffffff]
+[Mon Dec 17 21:45:44 2018]   DMA32    [mem 0x0000000001000000-0x00000000ffffffff]
+[Mon Dec 17 21:45:44 2018]   Normal   [mem 0x0000000100000000-0x000000013c1fffff]
+[Mon Dec 17 21:45:44 2018] Movable zone start for each node
+[Mon Dec 17 21:45:44 2018] Early memory node ranges
+[Mon Dec 17 21:45:44 2018]   node   0: [mem 0x0000000000001000-0x000000000009efff]
+[Mon Dec 17 21:45:44 2018]   node   0: [mem 0x0000000000100000-0x00000000dbfeffff]
+[Mon Dec 17 21:45:44 2018]   node   0: [mem 0x0000000100000000-0x000000013c1fffff]
+[Mon Dec 17 21:45:44 2018] Reserved but unavailable: 16498 pages
+[Mon Dec 17 21:45:44 2018] Initmem setup node 0 [mem 0x0000000000001000-0x000000013c1fffff]
+[Mon Dec 17 21:45:44 2018] On node 0 totalpages: 1147278
+[Mon Dec 17 21:45:44 2018]   DMA zone: 64 pages used for memmap
+[Mon Dec 17 21:45:44 2018]   DMA zone: 21 pages reserved
+[Mon Dec 17 21:45:44 2018]   DMA zone: 3998 pages, LIFO batch:0
+[Mon Dec 17 21:45:44 2018]   DMA32 zone: 14016 pages used for memmap
+[Mon Dec 17 21:45:44 2018]   DMA32 zone: 897008 pages, LIFO batch:31
+[Mon Dec 17 21:45:44 2018]   Normal zone: 3848 pages used for memmap
+[Mon Dec 17 21:45:44 2018]   Normal zone: 246272 pages, LIFO batch:31
+[Mon Dec 17 21:45:44 2018] ACPI: PM-Timer IO Port: 0x4008
+[Mon Dec 17 21:45:44 2018] ACPI: Local APIC address 0xfee00000
+[Mon Dec 17 21:45:44 2018] IOAPIC[0]: apic_id 4, version 32, address 0xfec00000, GSI 0-23
+[Mon Dec 17 21:45:44 2018] ACPI: INT_SRC_OVR (bus 0 bus_irq 0 global_irq 2 dfl dfl)
+[Mon Dec 17 21:45:44 2018] ACPI: INT_SRC_OVR (bus 0 bus_irq 9 global_irq 9 low level)
+[Mon Dec 17 21:45:44 2018] ACPI: IRQ0 used by override.
+[Mon Dec 17 21:45:44 2018] ACPI: IRQ9 used by override.
+[Mon Dec 17 21:45:44 2018] Using ACPI (MADT) for SMP configuration information
+[Mon Dec 17 21:45:44 2018] ACPI: HPET id: 0x8086a201 base: 0xfed00000
+[Mon Dec 17 21:45:44 2018] smpboot: Allowing 4 CPUs, 0 hotplug CPUs
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0x00000000-0x00000fff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0x0009f000-0x0009ffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0x000a0000-0x000effff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0x000f0000-0x000fffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xdbff0000-0xdbffffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xdc000000-0xfebfffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xfec00000-0xfec00fff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xfec01000-0xfedfffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xfee00000-0xfee00fff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xfee01000-0xfffbffff]
+[Mon Dec 17 21:45:44 2018] PM: Registered nosave memory: [mem 0xfffc0000-0xffffffff]
+[Mon Dec 17 21:45:44 2018] [mem 0xdc000000-0xfebfffff] available for PCI devices
+[Mon Dec 17 21:45:44 2018] clocksource: refined-jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1910969940391419 ns
+[Mon Dec 17 21:45:44 2018] random: get_random_bytes called from start_kernel+0x90/0x4a3 with crng_init=0
+[Mon Dec 17 21:45:44 2018] setup_percpu: NR_CPUS:64 nr_cpumask_bits:64 nr_cpu_ids:4 nr_node_ids:1
+[Mon Dec 17 21:45:44 2018] percpu: Embedded 43 pages/cpu @(____ptrval____) s137944 r8192 d29992 u524288
+[Mon Dec 17 21:45:44 2018] pcpu-alloc: s137944 r8192 d29992 u524288 alloc=1*2097152
+[Mon Dec 17 21:45:44 2018] pcpu-alloc: [0] 0 1 2 3 
+[Mon Dec 17 21:45:44 2018] Built 1 zonelists, mobility grouping on.  Total pages: 1129329
+[Mon Dec 17 21:45:44 2018] Policy zone: Normal
+[Mon Dec 17 21:45:44 2018] Kernel command line: BOOT_IMAGE=/vmlinuz-4.18.5-sclolus root=/dev/sda3 ro net.ifnames=0
+[Mon Dec 17 21:45:44 2018] Calgary: detecting Calgary via BIOS EBDA area
+[Mon Dec 17 21:45:44 2018] Calgary: Unable to locate Rio Grande table in EBDA - bailing!
+[Mon Dec 17 21:45:44 2018] Memory: 4424740K/4589112K available (14348K kernel code, 1298K rwdata, 3156K rodata, 1256K init, 604K bss, 164372K reserved, 0K cma-reserved)
+[Mon Dec 17 21:45:44 2018] SLUB: HWalign=64, Order=0-3, MinObjects=0, CPUs=4, Nodes=1
+[Mon Dec 17 21:45:44 2018] Kernel/User page tables isolation: enabled
+[Mon Dec 17 21:45:44 2018] Hierarchical RCU implementation.
+[Mon Dec 17 21:45:44 2018] 	RCU event tracing is enabled.
+[Mon Dec 17 21:45:44 2018] 	RCU restricting CPUs from NR_CPUS=64 to nr_cpu_ids=4.
+[Mon Dec 17 21:45:44 2018] RCU: Adjusting geometry for rcu_fanout_leaf=16, nr_cpu_ids=4
+[Mon Dec 17 21:45:44 2018] NR_IRQS: 4352, nr_irqs: 456, preallocated irqs: 16
+[Mon Dec 17 21:45:44 2018] Console: colour VGA+ 80x25
+[Mon Dec 17 21:45:44 2018] console [tty0] enabled
+[Mon Dec 17 21:45:44 2018] ACPI: Core revision 20180531
+[Mon Dec 17 21:45:44 2018] clocksource: hpet: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 133484882848 ns
+[Mon Dec 17 21:45:44 2018] hpet clockevent registered
+[Mon Dec 17 21:45:44 2018] APIC: Switch to symmetric I/O mode setup
+[Mon Dec 17 21:45:44 2018] ..TIMER: vector=0x30 apic1=0 pin1=2 apic2=-1 pin2=-1
+[Mon Dec 17 21:45:44 2018] tsc: Fast TSC calibration using PIT
+[Mon Dec 17 21:45:44 2018] tsc: Detected 2893.527 MHz processor
+[Mon Dec 17 21:45:44 2018] clocksource: tsc-early: mask: 0xffffffffffffffff max_cycles: 0x29b56058756, max_idle_ns: 440795323713 ns
+[Mon Dec 17 21:45:44 2018] Calibrating delay loop (skipped), value calculated using timer frequency.. 5787.05 BogoMIPS (lpj=2893527)
+[Mon Dec 17 21:45:44 2018] pid_max: default: 32768 minimum: 301
+[Mon Dec 17 21:45:44 2018] Security Framework initialized
+[Mon Dec 17 21:45:44 2018] SELinux:  Initializing.
+[Mon Dec 17 21:45:44 2018] SELinux:  Starting in permissive mode
+[Mon Dec 17 21:45:44 2018] Dentry cache hash table entries: 1048576 (order: 11, 8388608 bytes)
+[Mon Dec 17 21:45:44 2018] Inode-cache hash table entries: 524288 (order: 10, 4194304 bytes)
+[Mon Dec 17 21:45:44 2018] Mount-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[Mon Dec 17 21:45:44 2018] Mountpoint-cache hash table entries: 16384 (order: 5, 131072 bytes)
+[Mon Dec 17 21:45:44 2018] mce: CPU supports 0 MCE banks
+[Mon Dec 17 21:45:44 2018] Last level iTLB entries: 4KB 512, 2MB 8, 4MB 8
+[Mon Dec 17 21:45:44 2018] Last level dTLB entries: 4KB 512, 2MB 32, 4MB 32, 1GB 0
+[Mon Dec 17 21:45:44 2018] Spectre V2 : Mitigation: Full generic retpoline
+[Mon Dec 17 21:45:44 2018] Spectre V2 : Spectre v2 / SpectreRSB mitigation: Filling RSB on context switch
+[Mon Dec 17 21:45:44 2018] Speculative Store Bypass: Vulnerable
+[Mon Dec 17 21:45:44 2018] Freeing SMP alternatives memory: 40K
+[Mon Dec 17 21:45:44 2018] smpboot: CPU0: Intel(R) Core(TM) i5-3470S CPU @ 2.90GHz (family: 0x6, model: 0x3a, stepping: 0x9)
+[Mon Dec 17 21:45:44 2018] Performance Events: unsupported p6 CPU model 58 no PMU driver, software events only.
+[Mon Dec 17 21:45:44 2018] Hierarchical SRCU implementation.
+[Mon Dec 17 21:45:44 2018] smp: Bringing up secondary CPUs ...
+[Mon Dec 17 21:45:44 2018] x86: Booting SMP configuration:
+[Mon Dec 17 21:45:44 2018] .... node  #0, CPUs:      #1
+[Mon Dec 17 21:45:44 2018] mce: CPU supports 0 MCE banks
+[Mon Dec 17 21:45:44 2018]  #2
+[Mon Dec 17 21:45:44 2018] mce: CPU supports 0 MCE banks
+[Mon Dec 17 21:45:44 2018]  #3
+[Mon Dec 17 21:45:44 2018] mce: CPU supports 0 MCE banks
+[Mon Dec 17 21:45:44 2018] smp: Brought up 1 node, 4 CPUs
+[Mon Dec 17 21:45:44 2018] smpboot: Max logical packages: 1
+[Mon Dec 17 21:45:44 2018] smpboot: Total of 4 processors activated (23148.21 BogoMIPS)
+[Mon Dec 17 21:45:44 2018] devtmpfs: initialized
+[Mon Dec 17 21:45:44 2018] clocksource: jiffies: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 1911260446275000 ns
+[Mon Dec 17 21:45:44 2018] futex hash table entries: 1024 (order: 4, 65536 bytes)
+[Mon Dec 17 21:45:44 2018] RTC time: 21:45:44, date: 12/17/18
+[Mon Dec 17 21:45:44 2018] NET: Registered protocol family 16
+[Mon Dec 17 21:45:44 2018] audit: initializing netlink subsys (disabled)
+[Mon Dec 17 21:45:44 2018] audit: type=2000 audit(1545083143.041:1): state=initialized audit_enabled=0 res=1
+[Mon Dec 17 21:45:44 2018] cpuidle: using governor menu
+[Mon Dec 17 21:45:44 2018] ACPI: bus type PCI registered
+[Mon Dec 17 21:45:44 2018] PCI: MMCONFIG for domain 0000 [bus 00-3f] at [mem 0xdc000000-0xdfffffff] (base 0xdc000000)
+[Mon Dec 17 21:45:44 2018] PCI: not using MMCONFIG
+[Mon Dec 17 21:45:44 2018] PCI: Using configuration type 1 for base access
+[Mon Dec 17 21:45:44 2018] HugeTLB registered 2.00 MiB page size, pre-allocated 0 pages
+[Mon Dec 17 21:45:44 2018] ACPI: Added _OSI(Module Device)
+[Mon Dec 17 21:45:44 2018] ACPI: Added _OSI(Processor Device)
+[Mon Dec 17 21:45:44 2018] ACPI: Added _OSI(3.0 _SCP Extensions)
+[Mon Dec 17 21:45:44 2018] ACPI: Added _OSI(Processor Aggregator Device)
+[Mon Dec 17 21:45:44 2018] ACPI: Added _OSI(Linux-Dell-Video)
+[Mon Dec 17 21:45:44 2018] ACPI: 2 ACPI AML tables successfully acquired and loaded
+[Mon Dec 17 21:45:44 2018] ACPI: Interpreter enabled
+[Mon Dec 17 21:45:44 2018] ACPI: (supports S0 S5)
+[Mon Dec 17 21:45:44 2018] ACPI: Using IOAPIC for interrupt routing
+[Mon Dec 17 21:45:44 2018] PCI: MMCONFIG for domain 0000 [bus 00-3f] at [mem 0xdc000000-0xdfffffff] (base 0xdc000000)
+[Mon Dec 17 21:45:44 2018] PCI: MMCONFIG at [mem 0xdc000000-0xdfffffff] reserved in ACPI motherboard resources
+[Mon Dec 17 21:45:44 2018] PCI: Using host bridge windows from ACPI; if necessary, use "pci=nocrs" and report a bug
+[Mon Dec 17 21:45:44 2018] ACPI: Enabled 2 GPEs in block 00 to 07
+[Mon Dec 17 21:45:44 2018] ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-ff])
+[Mon Dec 17 21:45:44 2018] acpi PNP0A03:00: _OSC: OS supports [ExtendedConfig ASPM ClockPM Segments MSI]
+[Mon Dec 17 21:45:44 2018] acpi PNP0A03:00: _OSC: OS now controls [PME AER PCIeCapability LTR]
+[Mon Dec 17 21:45:44 2018] acpi PNP0A03:00: [Firmware Info]: MMCONFIG for domain 0000 [bus 00-3f] only partially covers this bridge
+[Mon Dec 17 21:45:44 2018] PCI host bridge to bus 0000:00
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [io  0x0d00-0xffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [mem 0xdc000000-0xfdffffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [mem 0x13c200000-0xfffffffff pref window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: root bus resource [bus 00-ff]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: [80ee:beef] type 00 class 0x030000
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: reg 0x10: [mem 0xe0000000-0xe0ffffff pref]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:03.0: [1022:2000] type 00 class 0x020000
+[Mon Dec 17 21:45:44 2018] pci 0000:00:03.0: reg 0x10: [io  0xd000-0xd01f]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:03.0: reg 0x14: [mem 0xe1000000-0xe1000fff]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:04.0: [80ee:cafe] type 00 class 0x088000
+[Mon Dec 17 21:45:44 2018] pci 0000:00:04.0: reg 0x10: [io  0xd020-0xd03f]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:04.0: reg 0x14: [mem 0xe1400000-0xe17fffff]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:04.0: reg 0x18: [mem 0xe1800000-0xe1803fff pref]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:05.0: [8086:2415] type 00 class 0x040100
+[Mon Dec 17 21:45:44 2018] pci 0000:00:05.0: reg 0x10: [io  0xd100-0xd1ff]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:05.0: reg 0x14: [io  0xd200-0xd23f]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:07.0: [8086:7113] type 00 class 0x068000
+[Mon Dec 17 21:45:44 2018] pci 0000:00:07.0: quirk: [io  0x4000-0x403f] claimed by PIIX4 ACPI
+[Mon Dec 17 21:45:44 2018] pci 0000:00:07.0: quirk: [io  0x4100-0x410f] claimed by PIIX4 SMB
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.0: [8086:27b9] type 00 class 0x060100
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.0: quirk: [io  0x8000-0x807f] claimed by ICH6 ACPI/GPIO/TCO
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: [8086:7111] type 00 class 0x01018a
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: reg 0x20: [io  0xd240-0xd24f]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: legacy IDE quirk: reg 0x10: [io  0x01f0-0x01f7]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: legacy IDE quirk: reg 0x14: [io  0x03f6]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: legacy IDE quirk: reg 0x18: [io  0x0170-0x0177]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.1: legacy IDE quirk: reg 0x1c: [io  0x0376]
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.4: [106b:003f] type 00 class 0x0c0310
+[Mon Dec 17 21:45:44 2018] pci 0000:00:1f.4: reg 0x10: [mem 0xe1804000-0xe1804fff]
+[Mon Dec 17 21:45:44 2018] ACPI: PCI Interrupt Link [LNKA] (IRQs 5 9 10 *11)
+[Mon Dec 17 21:45:44 2018] ACPI: PCI Interrupt Link [LNKB] (IRQs 5 *9 10 11)
+[Mon Dec 17 21:45:44 2018] ACPI: PCI Interrupt Link [LNKC] (IRQs 5 9 10 *11)
+[Mon Dec 17 21:45:44 2018] ACPI: PCI Interrupt Link [LNKD] (IRQs 5 *9 10 11)
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: vgaarb: setting as boot VGA device
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: vgaarb: VGA device added: decodes=io+mem,owns=io+mem,locks=none
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: vgaarb: bridge control possible
+[Mon Dec 17 21:45:44 2018] vgaarb: loaded
+[Mon Dec 17 21:45:44 2018] SCSI subsystem initialized
+[Mon Dec 17 21:45:44 2018] libata version 3.00 loaded.
+[Mon Dec 17 21:45:44 2018] ACPI: bus type USB registered
+[Mon Dec 17 21:45:44 2018] usbcore: registered new interface driver usbfs
+[Mon Dec 17 21:45:44 2018] usbcore: registered new interface driver hub
+[Mon Dec 17 21:45:44 2018] usbcore: registered new device driver usb
+[Mon Dec 17 21:45:44 2018] pps_core: LinuxPPS API ver. 1 registered
+[Mon Dec 17 21:45:44 2018] pps_core: Software ver. 5.3.6 - Copyright 2005-2007 Rodolfo Giometti <giometti@linux.it>
+[Mon Dec 17 21:45:44 2018] PTP clock support registered
+[Mon Dec 17 21:45:44 2018] EDAC MC: Ver: 3.0.0
+[Mon Dec 17 21:45:44 2018] Advanced Linux Sound Architecture Driver Initialized.
+[Mon Dec 17 21:45:44 2018] PCI: Using ACPI for IRQ routing
+[Mon Dec 17 21:45:44 2018] PCI: pci_cache_line_size set to 64 bytes
+[Mon Dec 17 21:45:44 2018] e820: reserve RAM buffer [mem 0x0009fc00-0x0009ffff]
+[Mon Dec 17 21:45:44 2018] e820: reserve RAM buffer [mem 0xdbff0000-0xdbffffff]
+[Mon Dec 17 21:45:44 2018] e820: reserve RAM buffer [mem 0x13c200000-0x13fffffff]
+[Mon Dec 17 21:45:44 2018] NetLabel: Initializing
+[Mon Dec 17 21:45:44 2018] NetLabel:  domain hash size = 128
+[Mon Dec 17 21:45:44 2018] NetLabel:  protocols = UNLABELED CIPSOv4 CALIPSO
+[Mon Dec 17 21:45:44 2018] NetLabel:  unlabeled traffic allowed by default
+[Mon Dec 17 21:45:44 2018] HPET: 4 timers in total, 0 timers will be used for per-cpu timer
+[Mon Dec 17 21:45:44 2018] hpet0: at MMIO 0xfed00000, IRQs 2, 8, 0, 0
+[Mon Dec 17 21:45:44 2018] hpet0: 4 comparators, 64-bit 14.318180 MHz counter
+[Mon Dec 17 21:45:44 2018] clocksource: Switched to clocksource tsc-early
+[Mon Dec 17 21:45:44 2018] VFS: Disk quotas dquot_6.6.0
+[Mon Dec 17 21:45:44 2018] VFS: Dquot-cache hash table entries: 512 (order 0, 4096 bytes)
+[Mon Dec 17 21:45:44 2018] pnp: PnP ACPI init
+[Mon Dec 17 21:45:44 2018] pnp 00:00: Plug and Play ACPI device, IDs PNP0303 (active)
+[Mon Dec 17 21:45:44 2018] pnp 00:01: Plug and Play ACPI device, IDs PNP0f03 (active)
+[Mon Dec 17 21:45:44 2018] pnp 00:02: Plug and Play ACPI device, IDs PNP0b00 (active)
+[Mon Dec 17 21:45:44 2018] system 00:03: [mem 0xfed00000-0xfed003ff] has been reserved
+[Mon Dec 17 21:45:44 2018] system 00:03: Plug and Play ACPI device, IDs PNP0103 PNP0c01 (active)
+[Mon Dec 17 21:45:44 2018] system 00:04: [mem 0xdc000000-0xdfffffff] has been reserved
+[Mon Dec 17 21:45:44 2018] system 00:04: Plug and Play ACPI device, IDs PNP0c02 (active)
+[Mon Dec 17 21:45:44 2018] pnp: PnP ACPI: found 5 devices
+[Mon Dec 17 21:45:44 2018] clocksource: acpi_pm: mask: 0xffffff max_cycles: 0xffffff, max_idle_ns: 2085701024 ns
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: resource 4 [io  0x0000-0x0cf7 window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: resource 5 [io  0x0d00-0xffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: resource 6 [mem 0x000a0000-0x000bffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: resource 7 [mem 0xdc000000-0xfdffffff window]
+[Mon Dec 17 21:45:44 2018] pci_bus 0000:00: resource 8 [mem 0x13c200000-0xfffffffff pref window]
+[Mon Dec 17 21:45:44 2018] NET: Registered protocol family 2
+[Mon Dec 17 21:45:44 2018] tcp_listen_portaddr_hash hash table entries: 4096 (order: 4, 65536 bytes)
+[Mon Dec 17 21:45:44 2018] TCP established hash table entries: 65536 (order: 7, 524288 bytes)
+[Mon Dec 17 21:45:44 2018] TCP bind hash table entries: 65536 (order: 8, 1048576 bytes)
+[Mon Dec 17 21:45:44 2018] TCP: Hash tables configured (established 65536 bind 65536)
+[Mon Dec 17 21:45:44 2018] UDP hash table entries: 4096 (order: 5, 131072 bytes)
+[Mon Dec 17 21:45:44 2018] UDP-Lite hash table entries: 4096 (order: 5, 131072 bytes)
+[Mon Dec 17 21:45:44 2018] NET: Registered protocol family 1
+[Mon Dec 17 21:45:44 2018] RPC: Registered named UNIX socket transport module.
+[Mon Dec 17 21:45:44 2018] RPC: Registered udp transport module.
+[Mon Dec 17 21:45:44 2018] RPC: Registered tcp transport module.
+[Mon Dec 17 21:45:44 2018] RPC: Registered tcp NFSv4.1 backchannel transport module.
+[Mon Dec 17 21:45:44 2018] pci 0000:00:02.0: Video device with shadowed ROM at [mem 0x000c0000-0x000dffff]
+[Mon Dec 17 21:45:44 2018] PCI: CLS 0 bytes, default 64
+[Mon Dec 17 21:45:44 2018] PCI-DMA: Using software bounce buffering for IO (SWIOTLB)
+[Mon Dec 17 21:45:44 2018] software IO TLB [mem 0xd7ff0000-0xdbff0000] (64MB) mapped at [(____ptrval____)-(____ptrval____)]
+[Mon Dec 17 21:45:44 2018] RAPL PMU: API unit is 2^-32 Joules, 3 fixed counters, 10737418240 ms ovfl timer
+[Mon Dec 17 21:45:44 2018] RAPL PMU: hw unit of domain pp0-core 2^-0 Joules
+[Mon Dec 17 21:45:44 2018] RAPL PMU: hw unit of domain package 2^-0 Joules
+[Mon Dec 17 21:45:44 2018] RAPL PMU: hw unit of domain pp1-gpu 2^-0 Joules
+[Mon Dec 17 21:45:44 2018] Scanning for low memory corruption every 60 seconds
+[Mon Dec 17 21:45:44 2018] Initialise system trusted keyrings
+[Mon Dec 17 21:45:44 2018] workingset: timestamp_bits=56 max_order=21 bucket_order=0
+[Mon Dec 17 21:45:44 2018] NFS: Registering the id_resolver key type
+[Mon Dec 17 21:45:44 2018] Key type id_resolver registered
+[Mon Dec 17 21:45:44 2018] Key type id_legacy registered
+[Mon Dec 17 21:45:44 2018] SELinux:  Registering netfilter hooks
+[Mon Dec 17 21:45:44 2018] cryptomgr_test (51) used greatest stack depth: 15448 bytes left
+[Mon Dec 17 21:45:44 2018] Key type asymmetric registered
+[Mon Dec 17 21:45:44 2018] Asymmetric key parser 'x509' registered
+[Mon Dec 17 21:45:44 2018] Block layer SCSI generic (bsg) driver version 0.4 loaded (major 251)
+[Mon Dec 17 21:45:44 2018] io scheduler noop registered
+[Mon Dec 17 21:45:44 2018] io scheduler deadline registered
+[Mon Dec 17 21:45:44 2018] io scheduler cfq registered (default)
+[Mon Dec 17 21:45:44 2018] io scheduler mq-deadline registered
+[Mon Dec 17 21:45:44 2018] io scheduler kyber registered
+[Mon Dec 17 21:45:44 2018] ACPI: AC Adapter [AC] (on-line)
+[Mon Dec 17 21:45:44 2018] input: Power Button as /devices/LNXSYSTM:00/LNXPWRBN:00/input/input0
+[Mon Dec 17 21:45:44 2018] ACPI: Power Button [PWRF]
+[Mon Dec 17 21:45:44 2018] input: Sleep Button as /devices/LNXSYSTM:00/LNXSLPBN:00/input/input1
+[Mon Dec 17 21:45:44 2018] ACPI: Sleep Button [SLPF]
+[Mon Dec 17 21:45:44 2018] ACPI: Video Device [GFX0] (multi-head: yes  rom: no  post: no)
+[Mon Dec 17 21:45:44 2018] input: Video Bus as /devices/LNXSYSTM:00/LNXSYBUS:00/PNP0A03:00/LNXVIDEO:00/input/input2
+[Mon Dec 17 21:45:44 2018] Serial: 8250/16550 driver, 4 ports, IRQ sharing enabled
+[Mon Dec 17 21:45:44 2018] Non-volatile memory driver v1.3
+[Mon Dec 17 21:45:44 2018] Linux agpgart interface v0.103
+[Mon Dec 17 21:45:44 2018] loop: module loaded
+[Mon Dec 17 21:45:44 2018] ata_piix 0000:00:1f.1: version 2.13
+[Mon Dec 17 21:45:44 2018] scsi host0: ata_piix
+[Mon Dec 17 21:45:44 2018] scsi host1: ata_piix
+[Mon Dec 17 21:45:44 2018] ata1: PATA max UDMA/33 cmd 0x1f0 ctl 0x3f6 bmdma 0xd240 irq 14
+[Mon Dec 17 21:45:44 2018] ata2: PATA max UDMA/33 cmd 0x170 ctl 0x376 bmdma 0xd248 irq 15
+[Mon Dec 17 21:45:44 2018] pcnet32: pcnet32.c:v1.35 21.Apr.2008 tsbogend@alpha.franken.de
+[Mon Dec 17 21:45:44 2018] pcnet32: PCnet/FAST III 79C973 at 0xd000, 08:00:27:5a:d1:d0 assigned IRQ 19
+[Mon Dec 17 21:45:44 2018] pcnet32: Found PHY 0022:561b at address 0
+[Mon Dec 17 21:45:44 2018] pcnet32: eth0: registered as PCnet/FAST III 79C973
+[Mon Dec 17 21:45:44 2018] pcnet32: 1 cards_found
+[Mon Dec 17 21:45:44 2018] e100: Intel(R) PRO/100 Network Driver, 3.5.24-k2-NAPI
+[Mon Dec 17 21:45:44 2018] e100: Copyright(c) 1999-2006 Intel Corporation
+[Mon Dec 17 21:45:44 2018] e1000: Intel(R) PRO/1000 Network Driver - version 7.3.21-k8-NAPI
+[Mon Dec 17 21:45:44 2018] e1000: Copyright (c) 1999-2006 Intel Corporation.
+[Mon Dec 17 21:45:44 2018] e1000e: Intel(R) PRO/1000 Network Driver - 3.2.6-k
+[Mon Dec 17 21:45:44 2018] e1000e: Copyright(c) 1999 - 2015 Intel Corporation.
+[Mon Dec 17 21:45:44 2018] sky2: driver version 1.30
+[Mon Dec 17 21:45:44 2018] ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+[Mon Dec 17 21:45:44 2018] ehci-pci: EHCI PCI platform driver
+[Mon Dec 17 21:45:44 2018] ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+[Mon Dec 17 21:45:44 2018] ohci-pci: OHCI PCI platform driver
+[Mon Dec 17 21:45:44 2018] ohci-pci 0000:00:1f.4: OHCI PCI host controller
+[Mon Dec 17 21:45:44 2018] ohci-pci 0000:00:1f.4: new USB bus registered, assigned bus number 1
+[Mon Dec 17 21:45:44 2018] ohci-pci 0000:00:1f.4: irq 23, io mem 0xe1804000
+[Mon Dec 17 21:45:44 2018] usb usb1: New USB device found, idVendor=1d6b, idProduct=0001, bcdDevice= 4.18
+[Mon Dec 17 21:45:44 2018] usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+[Mon Dec 17 21:45:44 2018] usb usb1: Product: OHCI PCI host controller
+[Mon Dec 17 21:45:44 2018] usb usb1: Manufacturer: Linux 4.18.5-sclolus ohci_hcd
+[Mon Dec 17 21:45:44 2018] usb usb1: SerialNumber: 0000:00:1f.4
+[Mon Dec 17 21:45:44 2018] hub 1-0:1.0: USB hub found
+[Mon Dec 17 21:45:44 2018] hub 1-0:1.0: 12 ports detected
+[Mon Dec 17 21:45:44 2018] uhci_hcd: USB Universal Host Controller Interface driver
+[Mon Dec 17 21:45:44 2018] usbcore: registered new interface driver usblp
+[Mon Dec 17 21:45:44 2018] usbcore: registered new interface driver usb-storage
+[Mon Dec 17 21:45:44 2018] i8042: PNP: PS/2 Controller [PNP0303:PS2K,PNP0f03:PS2M] at 0x60,0x64 irq 1,12
+[Mon Dec 17 21:45:44 2018] serio: i8042 KBD port at 0x60,0x64 irq 1
+[Mon Dec 17 21:45:44 2018] serio: i8042 AUX port at 0x60,0x64 irq 12
+[Mon Dec 17 21:45:44 2018] input: AT Translated Set 2 keyboard as /devices/platform/i8042/serio0/input/input3
+[Mon Dec 17 21:45:44 2018] rtc_cmos 00:02: registered as rtc0
+[Mon Dec 17 21:45:44 2018] rtc_cmos 00:02: alarms up to one day, 114 bytes nvram, hpet irqs
+[Mon Dec 17 21:45:44 2018] device-mapper: ioctl: 4.39.0-ioctl (2018-04-03) initialised: dm-devel@redhat.com
+[Mon Dec 17 21:45:44 2018] hidraw: raw HID events driver (C) Jiri Kosina
+[Mon Dec 17 21:45:44 2018] usbcore: registered new interface driver usbhid
+[Mon Dec 17 21:45:44 2018] usbhid: USB HID core driver
+[Mon Dec 17 21:45:44 2018] Initializing XFRM netlink socket
+[Mon Dec 17 21:45:44 2018] NET: Registered protocol family 10
+[Mon Dec 17 21:45:44 2018] Segment Routing with IPv6
+[Mon Dec 17 21:45:44 2018] sit: IPv6, IPv4 and MPLS over IPv4 tunneling driver
+[Mon Dec 17 21:45:44 2018] NET: Registered protocol family 17
+[Mon Dec 17 21:45:44 2018] Key type dns_resolver registered
+[Mon Dec 17 21:45:44 2018] sched_clock: Marking stable (323428680, 0)->(427309672, -103880992)
+[Mon Dec 17 21:45:44 2018] registered taskstats version 1
+[Mon Dec 17 21:45:44 2018] Loading compiled-in X.509 certificates
+[Mon Dec 17 21:45:44 2018] Unable to create integrity sysfs dir: -19
+[Mon Dec 17 21:45:44 2018]   Magic number: 14:778:803
+[Mon Dec 17 21:45:44 2018] console [netcon0] enabled
+[Mon Dec 17 21:45:44 2018] netconsole: network logging started
+[Mon Dec 17 21:45:44 2018] cfg80211: Loading compiled-in X.509 certificates for regulatory database
+[Mon Dec 17 21:45:44 2018] kworker/u8:2 (86) used greatest stack depth: 14568 bytes left
+[Mon Dec 17 21:45:44 2018] cfg80211: Loaded X.509 cert 'sforshee: 00b28ddf47aef9cea7'
+[Mon Dec 17 21:45:44 2018] ALSA device list:
+[Mon Dec 17 21:45:44 2018]   No soundcards found.
+[Mon Dec 17 21:45:44 2018] platform regulatory.0: Direct firmware load for regulatory.db failed with error -2
+[Mon Dec 17 21:45:44 2018] cfg80211: failed to load regulatory.db
+[Mon Dec 17 21:45:44 2018] ata1.01: NODEV after polling detection
+[Mon Dec 17 21:45:44 2018] ata1.00: ATA-6: VBOX HARDDISK, 1.0, max UDMA/133
+[Mon Dec 17 21:45:44 2018] ata1.00: 58720256 sectors, multi 128: LBA 
+[Mon Dec 17 21:45:44 2018] scsi 0:0:0:0: Direct-Access     ATA      VBOX HARDDISK    1.0  PQ: 0 ANSI: 5
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: [sda] 58720256 512-byte logical blocks: (30.1 GB/28.0 GiB)
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: Attached scsi generic sg0 type 0
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: [sda] Write Protect is off
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[Mon Dec 17 21:45:44 2018]  sda: sda1 sda2 sda3 sda4
+[Mon Dec 17 21:45:44 2018] sd 0:0:0:0: [sda] Attached SCSI disk
+[Mon Dec 17 21:45:44 2018] input: ImExPS/2 Generic Explorer Mouse as /devices/platform/i8042/serio1/input/input5
+[Mon Dec 17 21:45:44 2018] md: Waiting for all devices to be available before autodetect
+[Mon Dec 17 21:45:44 2018] md: If you don't use raid, use raid=noautodetect
+[Mon Dec 17 21:45:44 2018] md: Autodetecting RAID arrays.
+[Mon Dec 17 21:45:44 2018] md: autorun ...
+[Mon Dec 17 21:45:44 2018] md: ... autorun DONE.
+[Mon Dec 17 21:45:44 2018] EXT4-fs (sda3): INFO: recovery required on readonly filesystem
+[Mon Dec 17 21:45:44 2018] EXT4-fs (sda3): write access will be enabled during recovery
+[Mon Dec 17 21:45:44 2018] random: fast init done
+[Mon Dec 17 21:45:45 2018] tsc: Refined TSC clocksource calibration: 2893.406 MHz
+[Mon Dec 17 21:45:45 2018] clocksource: tsc: mask: 0xffffffffffffffff max_cycles: 0x29b4ee1aabe, max_idle_ns: 440795265226 ns
+[Mon Dec 17 21:45:45 2018] clocksource: Switched to clocksource tsc
+[Mon Dec 17 21:45:45 2018] random: crng init done
+[Mon Dec 17 21:45:47 2018] EXT4-fs (sda3): recovery complete
+[Mon Dec 17 21:45:47 2018] EXT4-fs (sda3): mounted filesystem with ordered data mode. Opts: (null)
+[Mon Dec 17 21:45:47 2018] VFS: Mounted root (ext4 filesystem) readonly on device 8:3.
+[Mon Dec 17 21:45:47 2018] devtmpfs: mounted
+[Mon Dec 17 21:45:47 2018] Freeing unused kernel image memory: 1256K
+[Mon Dec 17 21:45:47 2018] Write protecting the kernel read-only data: 20480k
+[Mon Dec 17 21:45:47 2018] Freeing unused kernel image memory: 2004K
+[Mon Dec 17 21:45:47 2018] Freeing unused kernel image memory: 940K
+[Mon Dec 17 21:45:48 2018] stty (98) used greatest stack depth: 13600 bytes left
+[Mon Dec 17 21:45:48 2018] dmesg (99) used greatest stack depth: 13416 bytes left
+[Mon Dec 17 21:45:49 2018] ip (158) used greatest stack depth: 11912 bytes left
+[Mon Dec 17 21:45:49 2018] udevd[188]: starting version 3.2.7
+[Mon Dec 17 21:45:49 2018] udevd[188]: specified group 'kvm' unknown
+[Mon Dec 17 21:45:50 2018] udevd[189]: starting eudev-3.2.7
+[Mon Dec 17 21:45:50 2018] udevd[189]: specified group 'kvm' unknown
+[Mon Dec 17 21:45:50 2018] usb_kbd_detect: loading out-of-tree module taints kernel.
+[Mon Dec 17 21:45:50 2018] An usb keyboard has been plugged.
+[Mon Dec 17 21:45:50 2018] Adding 2097148k swap on /dev/sda4.  Priority:1 extents:1 across:2097148k 
+[Mon Dec 17 21:45:50 2018] EXT4-fs (sda3): re-mounted. Opts: (null)
+[Mon Dec 17 21:45:51 2018] EXT4-fs (sda3): re-mounted. Opts: (null)
+[Mon Dec 17 21:45:51 2018] EXT4-fs (sda2): mounting ext2 file system using the ext4 subsystem
+[Mon Dec 17 21:45:51 2018] EXT4-fs (sda2): mounted filesystem without journal. Opts: (null)
+[Mon Dec 17 21:45:53 2018] pcnet32 0000:00:03.0 eth0: link up, 100Mbps, full-duplex
+[Mon Dec 17 21:46:36 2018] Cleaning up module.
+[Mon Dec 17 21:49:28 2018] usb 1-1: new full-speed USB device number 2 using ohci-pci
+[Mon Dec 17 21:49:28 2018] usb 1-1: New USB device found, idVendor=0483, idProduct=4010, bcdDevice= 2.00
+[Mon Dec 17 21:49:28 2018] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mon Dec 17 21:49:28 2018] usb 1-1: Product: 71M-RGB
+[Mon Dec 17 21:49:28 2018] usb 1-1: Manufacturer: CATEX TECH.
+[Mon Dec 17 21:49:28 2018] usb 1-1: SerialNumber: CA2015092
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.0/0003:0483:4010.0001/input/input6
+[Mon Dec 17 21:49:28 2018] hid-generic 0003:0483:4010.0001: input,hidraw0: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input0
+[Mon Dec 17 21:49:28 2018] hid-generic 0003:0483:4010.0002: hiddev96,hidraw1: USB HID v1.00 Device [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input1
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB Consumer Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0003/input/input7
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB System Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0003/input/input8
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0003/input/input9
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB Mouse as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0003/input/input10
+[Mon Dec 17 21:49:28 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0003/input/input11
+[Mon Dec 17 21:49:28 2018] hid-generic 0003:0483:4010.0003: input,hidraw2: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input2
+[Mon Dec 17 21:49:28 2018] An usb keyboard has been plugged.
+[Mon Dec 17 21:49:38 2018] usb 1-1: USB disconnect, device number 2
+[Mon Dec 17 21:49:38 2018] udevd[565]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] Cleaning up module.
+[Mon Dec 17 21:49:38 2018] udevd[567]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[569]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[570]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[571]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[572]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[573]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[575]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[576]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:38 2018] udevd[578]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:49:46 2018] usb 1-1: new full-speed USB device number 3 using ohci-pci
+[Mon Dec 17 21:49:46 2018] usb 1-1: New USB device found, idVendor=0483, idProduct=4010, bcdDevice= 2.00
+[Mon Dec 17 21:49:46 2018] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mon Dec 17 21:49:46 2018] usb 1-1: Product: 71M-RGB
+[Mon Dec 17 21:49:46 2018] usb 1-1: Manufacturer: CATEX TECH.
+[Mon Dec 17 21:49:46 2018] usb 1-1: SerialNumber: CA2015092
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.0/0003:0483:4010.0004/input/input12
+[Mon Dec 17 21:49:47 2018] hid-generic 0003:0483:4010.0004: input,hidraw0: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input0
+[Mon Dec 17 21:49:47 2018] hid-generic 0003:0483:4010.0005: hiddev96,hidraw1: USB HID v1.00 Device [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input1
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB Consumer Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0006/input/input13
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB System Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0006/input/input14
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0006/input/input15
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB Mouse as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0006/input/input16
+[Mon Dec 17 21:49:47 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0006/input/input17
+[Mon Dec 17 21:49:47 2018] hid-generic 0003:0483:4010.0006: input,hidraw2: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input2
+[Mon Dec 17 21:49:47 2018] An usb keyboard has been plugged.
+[Mon Dec 17 21:50:15 2018] usb 1-1: USB disconnect, device number 3
+[Mon Dec 17 21:50:15 2018] udevd[603]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] Cleaning up module.
+[Mon Dec 17 21:50:15 2018] udevd[605]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[606]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[608]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[609]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[610]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[611]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[613]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[614]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:50:15 2018] udevd[616]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:32 2018] usb 1-1: new full-speed USB device number 4 using ohci-pci
+[Mon Dec 17 21:52:32 2018] usb 1-1: New USB device found, idVendor=0483, idProduct=4010, bcdDevice= 2.00
+[Mon Dec 17 21:52:32 2018] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mon Dec 17 21:52:32 2018] usb 1-1: Product: 71M-RGB
+[Mon Dec 17 21:52:32 2018] usb 1-1: Manufacturer: CATEX TECH.
+[Mon Dec 17 21:52:32 2018] usb 1-1: SerialNumber: CA2015092
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.0/0003:0483:4010.0007/input/input18
+[Mon Dec 17 21:52:32 2018] hid-generic 0003:0483:4010.0007: input,hidraw0: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input0
+[Mon Dec 17 21:52:32 2018] hid-generic 0003:0483:4010.0008: hiddev96,hidraw1: USB HID v1.00 Device [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input1
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB Consumer Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0009/input/input19
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB System Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0009/input/input20
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0009/input/input21
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB Mouse as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0009/input/input22
+[Mon Dec 17 21:52:32 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.0009/input/input23
+[Mon Dec 17 21:52:32 2018] hid-generic 0003:0483:4010.0009: input,hidraw2: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input2
+[Mon Dec 17 21:52:32 2018] An usb keyboard has been plugged.
+[Mon Dec 17 21:52:42 2018] usb 1-1: USB disconnect, device number 4
+[Mon Dec 17 21:52:42 2018] udevd[663]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] Cleaning up module.
+[Mon Dec 17 21:52:42 2018] udevd[665]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[667]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[668]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[669]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[670]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[671]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[673]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[674]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:42 2018] udevd[676]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:52:48 2018] usb 1-1: new full-speed USB device number 5 using ohci-pci
+[Mon Dec 17 21:52:48 2018] usb 1-1: New USB device found, idVendor=0483, idProduct=4010, bcdDevice= 2.00
+[Mon Dec 17 21:52:48 2018] usb 1-1: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+[Mon Dec 17 21:52:48 2018] usb 1-1: Product: 71M-RGB
+[Mon Dec 17 21:52:48 2018] usb 1-1: Manufacturer: CATEX TECH.
+[Mon Dec 17 21:52:48 2018] usb 1-1: SerialNumber: CA2015092
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.0/0003:0483:4010.000A/input/input24
+[Mon Dec 17 21:52:48 2018] hid-generic 0003:0483:4010.000A: input,hidraw0: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input0
+[Mon Dec 17 21:52:48 2018] hid-generic 0003:0483:4010.000B: hiddev96,hidraw1: USB HID v1.00 Device [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input1
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB Consumer Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.000C/input/input25
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB System Control as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.000C/input/input26
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.000C/input/input27
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB Mouse as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.000C/input/input28
+[Mon Dec 17 21:52:48 2018] input: CATEX TECH. 71M-RGB Keyboard as /devices/pci0000:00/0000:00:1f.4/usb1/1-1/1-1:1.2/0003:0483:4010.000C/input/input29
+[Mon Dec 17 21:52:48 2018] hid-generic 0003:0483:4010.000C: input,hidraw2: USB HID v1.10 Keyboard [CATEX TECH. 71M-RGB] on usb-0000:00:1f.4-1/input2
+[Mon Dec 17 21:52:48 2018] An usb keyboard has been plugged.
+[Mon Dec 17 21:53:00 2018] usb 1-1: USB disconnect, device number 5
+[Mon Dec 17 21:53:00 2018] udevd[701]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] Cleaning up module.
+[Mon Dec 17 21:53:00 2018] udevd[703]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[704]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[706]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[707]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] hrtimer: interrupt took 10006075 ns
+[Mon Dec 17 21:53:00 2018] udevd[708]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[709]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[711]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[712]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory
+[Mon Dec 17 21:53:00 2018] udevd[714]: failed to execute '/lib/udev/echo' 'echo this is a test': No such file or directory

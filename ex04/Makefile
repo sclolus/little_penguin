@@ -10,6 +10,7 @@ all:
 modules_install: all
 	make -C $(KDIR) M=$(PWD) modules_install
 	cp $(module-obj) /lib/modules/$(shell uname -r)/extra
+	cp usb-keyboard.rules /run/udev/rules.d/70-usb-keyboard.rules
 	sudo depmod -a
 
 clean:
