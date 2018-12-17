@@ -11,6 +11,7 @@ src-test = test.c
 obj-test = $(src-test:.c=.o)
 
 all:
+	sudo chmod 777 /sys/kernel/debug #assuming this is what we need to do...
 	make -C $(KDIR) M=$(PWD) modules
 
 modules_install: all
