@@ -1,24 +1,11 @@
 // SPDX-License-Identifier: GPL-2.0
 #include <linux/module.h>
-#include <linux/kernel.h>
-#include <linux/types.h>
-#include <linux/uaccess.h>
 #include <linux/errno.h>
 #include <linux/proc_fs.h>
-#include <linux/proc_ns.h>
 #include <linux/fs.h>
 #include <linux/seq_file.h>
-#include <linux/slab.h>
-#include <linux/mnt_namespace.h>
 #include <linux/mount.h>
-#include <linux/sched.h>
-#include <linux/sched/task.h>
-#include <linux/path.h>
-#include <linux/dcache.h>
-#include <linux/namei.h>
 #include <linux/kallsyms.h>
-#include <linux/nsproxy.h>
-#include <../fs/mount.h>
 #include <linux/fs_struct.h>
 
 MODULE_AUTHOR("sclolus");
