@@ -31,15 +31,9 @@ MODULE_LICENSE("GPL v2");
 
 static void *ct_seq_start(struct seq_file *s, loff_t *pos)
 {
-	loff_t	*spos;
-
 	if (*pos >= 1)
 		return NULL;
-	spos = kmalloc(sizeof(loff_t), GFP_KERNEL); //yeah this is useless
-	if (!spos)
-		return NULL;
-	*spos = *pos;
-	return pos;
+	return (void*)0x1;
 }
 
 static void *ct_seq_next(struct seq_file *s, void *v, loff_t *pos)
@@ -49,7 +43,6 @@ static void *ct_seq_next(struct seq_file *s, void *v, loff_t *pos)
 
 static void ct_seq_stop(struct seq_file *s, void *v)
 {
-	kfree(v);
 }
 
 static struct vfsmount	*(*dl_collect_mounts)(const struct path *path);
