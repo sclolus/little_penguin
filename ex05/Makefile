@@ -20,6 +20,7 @@ modules_install: all
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean
+	rm -f $(TEST_FILE) $(obj-test)
 
 test: all $(TEST_FILE)
 	-sudo rmmod -f $(module_name)
