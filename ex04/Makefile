@@ -9,12 +9,13 @@ all:
 
 modules_install: all
 	make -C $(KDIR) M=$(PWD) modules_install
-	cp $(module-obj) /lib/modules/$(shell uname -r)/extra
-	cp usb-keyboard.rules /run/udev/rules.d/70-usb-keyboard.rules
+	sudo cp $(module-obj) /lib/modules/$(shell uname -r)/extra
+	sudo cp usb-keyboard.rules /run/udev/rules.d/70-usb-keyboard.rules
 	sudo depmod -a
 
 clean:
 	make -C $(KDIR) M=$(PWD) clean
+	sudo rm -f /run/udev/rules.d/70-usb-keyboard.rules
 
 test:
 	udevadm control --reload-rules

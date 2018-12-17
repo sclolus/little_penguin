@@ -1,3 +1,1 @@
-- check that ex04 is working on your computer.
-- in ex07 the pagesize thing, the chmod debug dir thing, recheck everything
 - fix the ret variables types from uint64_t to int64_t for the simple_write/read_*_buffer calls
