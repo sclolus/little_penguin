@@ -14,8 +14,8 @@ all:
 	make -C $(KDIR) M=$(PWD) modules
 
 modules_install: all
-	make -C $(KDIR) M=$(PWD) modules_install
-	cp $(module-obj) /lib/modules/$(shell uname -r)/extra
+	sudo make -C $(KDIR) M=$(PWD) modules_install
+	sudo cp $(module-obj) /lib/modules/$(shell uname -r)/extra
 	sudo depmod -a
 
 clean:
