@@ -64,14 +64,16 @@ ssize_t myfd_read(struct file *fp,
 		return -ENOMEM;
 
 	str_len = strlen(str);
-	if (str_len == 0)
+	if (str_len == 0) {
+		kfree(tmp);
 		return 0;
+	}
 	for (t = strlen(str) - 1, i = 0;; t--, i++) {
 		tmp[i] = str[t];
 		if (t == 0)
 			break;
 	}
-	tmp[i] = 0x0;
+	tmp[i + 1] = 0x0;
 	ret = simple_read_from_buffer(user, size, offs, tmp, str_len);
 	kfree(tmp);
 	return ret;
