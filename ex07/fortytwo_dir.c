@@ -43,13 +43,14 @@ static ssize_t id_write(struct file *file, const char __user *from, size_t size,
 
 static struct mutex foo_mutex;
 static char	    foo_buffer[PAGE_SIZE];
+static uint32_t	    foo_size = 0;
 
 static ssize_t	foo_read(struct file *file, char __user *to, size_t size, loff_t *_offset)
 {
 	int64_t    ret;
 
 	mutex_lock(&foo_mutex);
-	ret = simple_read_from_buffer(to, size, _offset, foo_buffer, sizeof(foo_buffer));
+	ret = simple_read_from_buffer(to, size, _offset, foo_buffer, foo_size);
 	mutex_unlock(&foo_mutex);
 	if (ret < 0)
 		return (-EIO);
@@ -65,6 +66,7 @@ static ssize_t	foo_write(struct file *file, const char __user *from, size_t size
 	mutex_unlock(&foo_mutex);
 	if (ret < 0)
 		return (-EIO);
+	foo_size = ret;
 	return (ret);
 }
 
