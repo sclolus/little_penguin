@@ -112,11 +112,11 @@ err_cleanup:
 	debugfs_remove_recursive(fortytwo_dir);
 	return (-EPERM);
 }
-module_init(init)
+module_init(init);
 
-	static void __exit cleanup(void)
+static void __exit cleanup(void)
 {
 	printk(KERN_INFO LOG "Cleaning up module.\n");
 	debugfs_remove_recursive(fortytwo_dir);
 }
-module_exit(cleanup)
+module_exit(cleanup);
