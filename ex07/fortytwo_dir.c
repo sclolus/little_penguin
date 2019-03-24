@@ -63,10 +63,12 @@ static ssize_t	foo_write(struct file *file, const char __user *from, size_t size
 
 	mutex_lock(&foo_mutex);
 	ret = simple_write_to_buffer(foo_buffer, sizeof(foo_buffer), _offset, from, size);
+	if (ret >= 0) {
+		foo_size = ret;
+	}
 	mutex_unlock(&foo_mutex);
 	if (ret < 0)
 		return (-EIO);
-	foo_size = ret;
 	return (ret);
 }
 
